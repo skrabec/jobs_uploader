@@ -1,4 +1,4 @@
-timeout(5, timeUnit='MINUTES') {
+timeout(5) {
     node('main') {
 
         stage('checkout') {

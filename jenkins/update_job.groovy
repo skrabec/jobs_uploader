@@ -15,7 +15,7 @@ timeout(5) {
         
         stage("Deploy changes to jenkins") {
             dir("jenkins") {
-                sh "/opt/jenkins_jobs_venv/bin/jenkins-jobs --conf ./jenkins/jobs/job.ini update ./jobs"
+                sh "/opt/jenkins_jobs_venv/bin/jenkins-jobs --conf ./jobs/job.ini update ./jobs"
             }
         }
     }

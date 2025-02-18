@@ -14,13 +14,3 @@ keep_descriptions=True
 recursive=True
 EOF"""
 
-# Проверяем наличие директории с джобами
-if [ ! -d "./jobs" ]; then
-    echo "Error: jobs directory not found!"
-    exit 1
-fi
-
-echo "Starting jobs update..."
-jenkins-jobs --conf ./job.ini update ./jobs
-
-echo "Jobs update completed successfully"

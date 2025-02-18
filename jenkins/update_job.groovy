@@ -6,11 +6,7 @@ timeout(5) {
         }
 
         stage('Update jobs') {
-            sh '''
-                cd jenkins
-                docker build -t jenkins_updater .
-                docker run -v ${WORKSPACE}/jenkins/jobs:/root/jobs_builder/jobs jenkins_updater
-            '''
+            sh "jenkins-jobs --conf ./job.ini update ./jobs"
         }
 
     }

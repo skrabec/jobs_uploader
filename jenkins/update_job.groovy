@@ -1,5 +1,5 @@
 timeout(5) {
-    node('main') {
+    node('built-in') {
 
         stage('checkout') {
             checkout scm

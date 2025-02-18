@@ -14,4 +14,4 @@
     pipeline-scm:
       scm:
       - runner-tests-repo
-      script-path: ./jenkins/jobs_template.groovy
+      script-path: ./jenkins/update_job.groovy

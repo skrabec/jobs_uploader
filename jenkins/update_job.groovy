@@ -1,5 +1,5 @@
 timeout(5) {
-    node('python') {
+    node('built-in') {
 
         stage('checkout') {
             checkout scm

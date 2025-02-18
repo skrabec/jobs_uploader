@@ -1,5 +1,5 @@
 timeout(5) {
-    node('built-in') {
+    node('maven') {
 
         stage('checkout') {
             checkout scm

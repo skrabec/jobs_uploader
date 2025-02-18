@@ -1,12 +1,16 @@
 timeout(5) {
-    node('maven') {
+    node('python') {
 
         stage('checkout') {
             checkout scm
         }
 
         stage('Update jobs') {
-            sh "docker run -t localhost:5005/jenkins_updater https://localhost/jenkins admin admin"
+            sh '''
+                cd jenkins
+                docker build -t jenkins_updater .
+                docker run -v ${WORKSPACE}/jenkins/jobs:/root/jobs_builder/jobs jenkins_updater
+            '''
         }
 
     }

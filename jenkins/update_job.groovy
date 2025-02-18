@@ -1,5 +1,5 @@
 timeout(5) {
-    node('maven') {
+    node('python') {
 
         stage('checkout') {
             checkout scm

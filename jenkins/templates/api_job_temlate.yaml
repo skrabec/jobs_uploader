@@ -1,0 +1,17 @@
+- job-template:
+    name: api-tests
+    description: '{description}'
+    project-type: pipeline
+    parameters:
+    - string:
+        name: REFSPEC
+        default: master
+        description: "<h3>API tests job</h3>"
+    - text:
+        name: YAML_CONFIG
+        default: ""
+        description: "<h3>Yaml job configuration</h3>"
+    pipeline-scm:
+      scm:
+      - api-tests-repo
+      script-path: ./jenkins/api_pipeline.groovy

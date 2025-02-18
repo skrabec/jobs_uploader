@@ -1,0 +1,18 @@
+- job-template:
+    name: runner-tests
+    description: '{description}'
+    project-type: pipeline
+    concurrent: true
+    parameters:
+    - string:
+        name: REFSPEC
+        default: main
+        description: "<h3>UI autotests job</h3>"
+    - text:
+        name: YAML_CONFIG
+        default: ""
+        description: "<h3>Yaml job configuration</h3>"
+    pipeline-scm:
+      scm:
+      - runner-tests-repo
+      script-path: ./jenkins/runner.groovy

@@ -11,9 +11,9 @@
                 - text:
                           name: YAML_CONFIG
                           default: ""
-                          test_types:
-                                - ui
+                          TEST_TYPES:
                                 - api
+                                - ui
                   description: "<h3>Yaml job configuration</h3>"
           pipeline-scm:
                   scm:

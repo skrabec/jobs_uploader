@@ -1,21 +1,25 @@
 - job-template:
-      name: runner-tests
-      description: '{description}'
-      project-type: pipeline
-      concurrent: true
-      parameters:
-        - string:
-              name: REFSPEC
-              default: main
-              description: "<h3>Runner tests</h3>"
-        - text:
-              name: YAML_CONFIG
-              default: |
-                  test_types:
-                    - ui
-                    - api
-              description: "<h3>Yaml job configuration. Example: test_types: - ui - api</h3>"
-      pipeline-scm:
-          scm:
-            - runner-tests-repo
-          script-path: ./jenkins/runner.groovy
+        name: runner-tests
+        description: '{description}'
+        project-type: pipeline
+        concurrent: true
+        parameters:
+            - string:
+                    name: REFSPEC
+                    default: main
+                    description: "<h3>Runner tests</h3>"
+            - text:
+                    name: YAML_CONFIG
+                    default: ""
+                    description: "<h3>Yaml job configuration. Example: test_types: - ui - api</h3>"
+            - choice:
+                    name: TEST_TYPE
+                    choices:
+                        - all
+                        - ui
+                        - api
+                    description: "Select tests to run"
+        pipeline-scm:
+              scm:
+                  - runner-tests-repo
+              script-path: ./jenkins/runner.groovy

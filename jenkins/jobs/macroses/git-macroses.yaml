@@ -16,7 +16,7 @@
         url: https://github.com/skrabec/java_otus_pro_api.git
         credentials-id: jenkins
         branches:
-        - main
+        - master
         refspec: '+refs/heads/*:refs/remotes/origin/*'
 
 - scm:

@@ -1,40 +1,40 @@
 ---
 - scm:
-      name: ui-autotests-repo
-      scm:
-        - git:
-              url: https://github.com/skrabec/java_otus_pro.git
-              credentials-id: jenkins
-              branches:
-                - $REFSPEC # Changed to use Jenkins variable
-              refspec: '+refs/heads/*:refs/remotes/origin/*'
+    name: ui-autotests-repo
+    scm:
+    - git:
+        url: https://github.com/skrabec/java_otus_pro.git
+        credentials-id: jenkins
+        branches:
+        - '${REFSPEC:-homework_4}'
+        refspec: '+refs/heads/*:refs/remotes/origin/*'
 
 - scm:
-      name: api-tests-repo
-      scm:
-        - git:
-              url: https://github.com/skrabec/java_otus_pro_api.git
-              credentials-id: jenkins
-              branches:
-                - $REFSPEC # Changed to use Jenkins variable
-              refspec: '+refs/heads/*:refs/remotes/origin/*'
+    name: api-tests-repo
+    scm:
+    - git:
+        url: https://github.com/skrabec/java_otus_pro_api.git
+        credentials-id: jenkins
+        branches:
+        - '${REFSPEC:-master}'
+        refspec: '+refs/heads/*:refs/remotes/origin/*'
 
 - scm:
-      name: runner-tests-repo
-      scm:
-        - git:
-              url: https://github.com/skrabec/runner_tests.git
-              credentials-id: jenkins
-              branches:
-                - $REFSPEC # Changed to use Jenkins variable
-              refspec: '+refs/heads/*:refs/remotes/origin/*'
+    name: runner-tests-repo
+    scm:
+    - git:
+        url: https://github.com/skrabec/runner_tests.git
+        credentials-id: jenkins
+        branches:
+        - $REFSPEC # Changed to use Jenkins variable
+        refspec: '+refs/heads/*:refs/remotes/origin/*'
 
 - scm:
-      name: jobs-uploader-repo
-      scm:
-        - git:
-              url: https://github.com/skrabec/jobs_uploader.git
-              credentials-id: jenkins
-              branches:
-                - $REFSPEC # Changed to use Jenkins variable
-              refspec: '+refs/heads/*:refs/remotes/origin/*'
+    name: jobs-uploader-repo
+    scm:
+    - git:
+        url: https://github.com/skrabec/jobs_uploader.git
+        credentials-id: jenkins
+        branches:
+        - $REFSPEC # Changed to use Jenkins variable
+        refspec: '+refs/heads/*:refs/remotes/origin/*'

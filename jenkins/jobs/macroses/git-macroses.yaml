@@ -6,7 +6,7 @@
         url: https://github.com/skrabec/java_otus_pro.git
         credentials-id: jenkins
         branches:
-        - '${REFSPEC:-homework_4}'
+        - $REFSPEC # Changed to use Jenkins variable
         refspec: '+refs/heads/*:refs/remotes/origin/*'
 
 - scm:
@@ -16,7 +16,7 @@
         url: https://github.com/skrabec/java_otus_pro_api.git
         credentials-id: jenkins
         branches:
-        - '${REFSPEC:-master}'
+        - $REFSPEC # Changed to use Jenkins variable
         refspec: '+refs/heads/*:refs/remotes/origin/*'
 
 - scm:
